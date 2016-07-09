@@ -1,0 +1,6 @@
+CREATE SEQUENCE studentschema.collegetable_sequence
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 1000
+  START 3
+  CACHE 1;

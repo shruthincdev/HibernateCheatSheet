@@ -1,0 +1,34 @@
+1. We cannot get all the records from database. We can only get one record at a time
+2. We cannot update primary key values.
+2. We need to update the complete record. We cannot update a single value
+
+Session Methods
+
+Insertion methods
+1. Save() returns primaryKey
+2. Persist() will save the object to database but will not return anything
+3. Saveorupdate(); It will update the new data if already the data with same primarykey is present
+		If the data is not present, the record will be inserted
+
+Update data methods:
+1. Update(student) -> It will update the data with the data we pass
+2. Merge(Student) -> At any cost the update will be performed even if the exception occurs (duplicate object in session)
+3. Saveorupdate(); It will update the new data if already the data with same primarykey is present
+		If the data is not present, the record will be inserted
+		
+Delete data methods:
+1. session.delete(obj); -> we need to set the primary key of the obj before performing delete operation
+
+Select data methods
+1. Object get(Entity.class, primaryKey)
+When this method is executed, the database is not hit and it returns a proxy object 
+(Just bean will be initialized and properties will not be set). 
+It performs query on non-primary key attributes. When non-primary key properties are accessed, it throws row not found error. 
+
+2. Object load(Entity.class, primaryKey)
+Use load when you are sure that object exists in the database. 
+From the output it’s clear that get() returns the object by fetching it from database or from hibernate cache whereas load() 
+just returns the reference of an object that might not actually exists, it loads the data from database or 
+cache only when you access other properties of the object.
+
+	

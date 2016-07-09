@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.hibernate.beans.StudentBean" table="Student_Table">
+        <id name="studentId" type="long">
+            <column name="STUDENT_ID"/>
+        </id>
+        <property name="studentName" type="string">
+            <column name="STUDENT_NAME" length="50" />
+        </property>
+        <property name="studentPhone" type="string">
+            <column name="STUDENT_PHONE" length="10"  />
+        </property>
+        <property name="studentEmail" type="string">
+            <column name="STUDENT_EMAIL" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>
